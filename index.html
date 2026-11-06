@@ -7,9 +7,18 @@
 <body>
     <h2>ฟอร์มลงทะเบียนสมาชิกใหม่ (Registration Form)</h2>
     <form action="#" method="POST">
-        <!-- ช่องที่ 1: ชื่อ-นามสกุล -->
-        <label for="fullname">ชื่อ-นามสกุล:</label><br>
-        <input type="text" id="fullname" name="fullname" required><br><br>
+        <!-- ช่องที่ 1: ชื่อ-นามสกุล (แก้ไข Pattern รองรับเฉพาะอักษรไทย-อังกฤษ และเว้นวรรค) -->
+        <div class="form-group">
+            <label for="fullname">ชื่อ - นามสกุล:</label><br>
+            <input 
+                type="text" 
+                id="fullname" 
+                name="fullname" 
+                pattern="^[a-zA-Zก-ฮ\s]+$" 
+                title="กรุณากรอกเฉพาะอักษรภาษาไทยหรือภาษาอังกฤษเท่านั้น (ห้ามใส่อักขระพิเศษหรือตัวเลข)" 
+                required
+            ><br><br>
+        </div>
 
         <!-- ช่องที่ 2: อายุ (สำหรับเทส Boundary values) -->
         <label for="age">อายุ (ปี):</label><br>
